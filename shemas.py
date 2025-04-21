@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Union
 
 class Usuario(BaseModel):
     documento: int
@@ -7,7 +8,7 @@ class Usuario(BaseModel):
     correo: str
     password: str
     rol: str
-    token: str | None = None  # <--- Campo nuevo (opcional)
+    token: Union[str, None]  # <--- Campo nuevo (opcional)
 
 
 class Login(BaseModel):
